@@ -22,7 +22,7 @@ Error Handling: Comprehensive error handling ensures that even if there's an iss
 # Getting Started
 Follow these steps to get the News API Application up and running on your local machine:
 
-# Navigate to the project directory and install the necessary dependencies using your preferred package manager (e.g., npm or yarn).
+### Navigate to the project directory and install the necessary dependencies using your preferred package manager (e.g., npm or yarn).
 
 bash
 Copy code
