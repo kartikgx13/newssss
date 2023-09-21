@@ -1,38 +1,47 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import {Link} from "react-router-dom";
-export class Navbar extends Component {
-  static propTypes = {}
+import './Navbarstyles.css'
+import { useState } from 'react';
 
-  render() {
-    return (
-      <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary ">
-  <div className="container-fluid ">
-    <a className="navbar-brand" href="#">NewShortzzz</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse " id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li><Link className="nav-link" to="/business">Business</Link></li>
-        <li><Link className="nav-link" to="/entertainment">Entertainment</Link></li>
-        <li><Link className="nav-link" to="/general">General</Link></li>
-        <li><Link className="nav-link" to="/health">Health</Link></li>
-        <li><Link className="nav-link" to="/science">Science</Link></li>
-        <li><Link className="nav-link" to="/sports">Sports</Link></li>
-        <li><Link className="nav-link" to="/technology">Technology</Link></li>
+function Navbar() {
+  const [activeLink, setActiveLink] = useState("");
+
+
+  //logic to change css of links after click
+  const [click,setClick]=useState(false)
+  const handleClick = (link) => {
+    setActiveLink(link);
+    setClick(!click);
+  };
+
+  return (
+    <section className='nav-header-section'>
+      <div className="navbar-container">
+    <a className="navbar-logo" href="/">NewShortzzz</a>
+      <ul className='nav-links-container'>
+        <li><Link className={activeLink === "business" ? "nav-link-clicked" : ""}
+            onClick={() => handleClick("business")} 
+             to="/business">Business</Link></li>
+        <li><Link className={activeLink === "entertainment" ? "nav-link-clicked" : ""}
+            onClick={() => handleClick("entertainment")} 
+             to="/entertainment">Entertainment</Link></li>
+        <li><Link className={activeLink === "health" ? "nav-link-clicked" : ""}
+            onClick={() => handleClick("health")} 
+             to="/health">Health</Link></li>
+        <li><Link className={activeLink === "science" ? "nav-link-clicked" : ""}
+            onClick={() => handleClick("science")} 
+             to="/science">Science</Link></li>
+        <li><Link className={activeLink === "sports" ? "nav-link-clicked" : ""}
+            onClick={() => handleClick("sports")} 
+             to="/sports">Sports</Link></li>
+        <li><Link className={activeLink === "technology" ? "nav-link-clicked" : ""}
+            onClick={() => handleClick("technology")} 
+             to="/technology">Technology</Link></li>
       </ul>
-      
-    </div>
   </div>
-</nav>
-      </>
-    )
-  }
+      </section>
+  )
 }
 
 export default Navbar

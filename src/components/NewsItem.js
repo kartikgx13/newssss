@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './NewsItem.css'
 
 export class NewsItem extends Component {
     
@@ -11,10 +12,9 @@ export class NewsItem extends Component {
     //dynamically
     return (
       <>
-      <div className='my-3'>
-      <div className="card">
+      <div className="news-card">
       <img
-            src={!imageUrl ? "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.srmist.edu.in%2Fplaceholder-png-29%2F&psig=AOvVaw008ZAP0zKJas7yWmE3w6su&ust=1695363673522000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCPjDtPmHu4EDFQAAAAAdAAAAABAE" : imageUrl}
+            src={!imageUrl ? "https://cdn-icons-png.flaticon.com/512/1375/1375106.png" : imageUrl}
             className="card-img-top"
             alt="..."
           />
@@ -22,8 +22,7 @@ export class NewsItem extends Component {
        <h5 className="card-title">{title}...</h5>
        <p className="card-text">{description}...</p>
        <p class="card-text"><small class="text-muted">By {!author ? "Unknown" : author} on {new Date(date).toDateString()}</small></p>
-       <a href={newsUrl} className="btn btn-sm btn-primary">Read more</a>
-       </div>
+       <a href={newsUrl} className="read-btn"><button>Read more</button></a>
        </div>
        </div>
       </>

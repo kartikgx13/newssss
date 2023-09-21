@@ -1,0 +1,76 @@
+.navbar-container{
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    position: fixed;
+    top: 0;
+    height: 9%;
+    background-color: #3085C3;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1rem;
+}
+
+.nav-header-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    margin: 0;
+}
+
+.navbar-logo{
+  color: black;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-links-container li a{
+    text-decoration: none;
+    color: black;
+    transition: 0.3s ease-out;
+}
+
+.nav-links-container li{
+  color: rgb(27, 27, 27);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  list-style-type: none;
+  font-weight: bold;
+  box-sizing: border-box;
+  text-decoration: none;
+  transition: 0.3s ease-out;
+}
+
+.nav-link-clicked{
+    box-sizing: border-box;
+    background-color: #5CD2E6;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s ease-out;
+}
